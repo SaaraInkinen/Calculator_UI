@@ -22,13 +22,32 @@ class CalculatorApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Calculator'),
         ),
-        body: ButtonGrid(),
-        
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Screen(),
+            ButtonGrid(),
+          ],
+        ),
       ),
-      
     );
   }
 }
+
+
+/*class AlignScreen extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Screen(),
+        ButtonGrid(),
+      ],
+    );
+  }
+}*/
 
 class ButtonGrid extends StatelessWidget {
   
@@ -52,10 +71,10 @@ class ButtonGrid extends StatelessWidget {
           NumberCircle('1'),
           NumberCircle('2'),
           NumberCircle('3'),
-          ButtonRectangle(''),
-          NumberCircle(''),
+          EmptySpace(),
+          EmptySpace(),
           NumberCircle('0'),
-          NumberCircle(''),
+          EmptySpace(),
           ButtonRectangle('='),
         ],
       ),
@@ -101,7 +120,7 @@ class ButtonRectangle extends StatelessWidget {
     return Center(
           child: Container(
             width: 100,
-            height: 100,
+            height: 60,
             decoration: BoxDecoration(
               border: Border.all(width: 2),
               shape: BoxShape.rectangle,
@@ -116,3 +135,39 @@ class ButtonRectangle extends StatelessWidget {
   }
 }
 
+class Screen extends StatelessWidget {
+  
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+          child: Container(
+            width: 300,
+            height: 100,
+            decoration: BoxDecoration(
+              border: Border.all(width: 2),
+              shape: BoxShape.rectangle,
+              color: Colors.amber,
+            ),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text('2+2'),
+              ))
+           );
+    
+  }
+}
+
+class EmptySpace extends StatelessWidget {
+  
+  
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+          child: Container(
+            width: 100,
+            height: 100,
+            ),
+           );
+    
+  }
+}
