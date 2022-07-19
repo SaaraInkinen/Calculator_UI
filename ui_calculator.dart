@@ -22,7 +22,7 @@ class CalculatorApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Calculator'),
         ),
-        body: ButtonRow(),
+        body: ButtonGrid(),
         
       ),
       
@@ -30,42 +30,40 @@ class CalculatorApp extends StatelessWidget {
   }
 }
 
-class ButtonRow extends StatelessWidget {
+class ButtonGrid extends StatelessWidget {
   
-  @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        ButtonColumn('7', '4', '1', ''),
-        ButtonColumn('8', '5', '2', '0'),
-        ButtonColumn('9', '6', '3', ''),
-      ],
+    return Center(
+      child: GridView.count(
+        primary: false,
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        crossAxisCount: 4,
+        children: <Widget>[
+          NumberCircle('7'),
+          NumberCircle('8'),
+          NumberCircle('9'),
+          ButtonRectangle('+'),
+          NumberCircle('4'),
+          NumberCircle('5'),
+          NumberCircle('6'),
+          ButtonRectangle('-'),
+          NumberCircle('1'),
+          NumberCircle('2'),
+          NumberCircle('3'),
+          ButtonRectangle(''),
+          NumberCircle(''),
+          NumberCircle('0'),
+          NumberCircle(''),
+          ButtonRectangle('='),
+        ],
+      ),
     );
   }
 }
 
-class ButtonColumn extends StatelessWidget {
-  
-  final String numberOne;
-  final String numberTwo;
-  final String numberThree;
-  final String numberFour;
-  
-  ButtonColumn(this.numberOne, this.numberTwo, this.numberThree, this.numberFour);
-    
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        NumberCircle(numberOne),
-        NumberCircle(numberTwo),
-        NumberCircle(numberThree),
-        NumberCircle(numberFour),
-      ]);
-  }
-}
+
 class NumberCircle extends StatelessWidget {
   
   final String number;
@@ -92,4 +90,29 @@ class NumberCircle extends StatelessWidget {
   }
 }
 
+class ButtonRectangle extends StatelessWidget {
+  
+  final String symbol;
+  
+  ButtonRectangle(this.symbol);
+  
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+          child: Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+              border: Border.all(width: 2),
+              shape: BoxShape.rectangle,
+              color: Colors.amber,
+            ),
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(symbol),
+              ))
+           );
+    
+  }
+}
 
