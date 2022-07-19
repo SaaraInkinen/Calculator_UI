@@ -22,7 +22,7 @@ class CalculatorApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Calculator'),
         ),
-        body: NumberCircle(),
+        body: NumberCircle('1'),
         
       ),
       
@@ -31,6 +31,10 @@ class CalculatorApp extends StatelessWidget {
 }
 
 class NumberCircle extends StatelessWidget {
+  
+  final String number;
+  
+  NumberCircle(this.number);
   
   @override
   Widget build(BuildContext context) {
@@ -45,11 +49,9 @@ class NumberCircle extends StatelessWidget {
             ),
             child: Align(
               alignment: Alignment.center,
-              child: Text(
-                '1',
+              child: Text(number),
               ))
-           ),
-        );
+           );
     
   }
 }
