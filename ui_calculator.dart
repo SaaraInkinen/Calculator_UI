@@ -25,152 +25,231 @@ class CalculatorApp extends StatelessWidget {
             child: Text('Calculator'),
           ),
         ),
-        body: Center(
-          child: ButtonGrid(),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: 100,
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 300,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 2),
+                    shape: BoxShape.rectangle,
+                    color: Colors.blueGrey,
+                  ),
+                  child: Align(
+                    alignment: FractionalOffset(0.1, 0.5),
+                    child: Text('2+2'),
+                  ),
+                ),
+                Container(
+                  width: 100,
+                  height: 100,
+                ),
+              ],
+            ),
+            Flexible(
+              child: GridView.count(
+                primary: false,
+                padding: const EdgeInsets.all(20),
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                crossAxisCount: 4,
+                children: <Widget>[
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('7'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('8'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('9'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.rectangle,
+                      color: Colors.blueGrey[400],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('+'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('4'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('5'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('6'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.rectangle,
+                      color: Colors.blueGrey[400],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('-'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('1'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('2'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('3'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.circle,
+                      color: Colors.blueGrey[300],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('0'),
+                    ),
+                  ),
+                  Container(
+                    width: 100,
+                    height: 100,
+                  ),
+                  Container(
+                    width: 100,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.rectangle,
+                      color: Colors.blueGrey[400],
+                    ),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Text('='),
+                    ),
+                  ),
+                ]
+              ),
+            ),
+          ],
         ),
       ),
     );
-  }
-}
-
-
-class AlignScreen extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Screen(),
-        ButtonGrid(),
-      ],
-    );
-  }
-}
-
-class ButtonGrid extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    return GridView.count(
-      primary: false,
-      padding: const EdgeInsets.all(20),
-      crossAxisSpacing: 8,
-      mainAxisSpacing: 8,
-      crossAxisCount: 4,
-      children: <Widget>[
-        NumberCircle('7'),
-        NumberCircle('8'),
-        NumberCircle('9'),
-        ButtonRectangle('+'),
-        NumberCircle('4'),
-        NumberCircle('5'),
-        NumberCircle('6'),
-        ButtonRectangle('-'),
-        NumberCircle('1'),
-        NumberCircle('2'),
-        NumberCircle('3'),
-        EmptySpace(),
-        EmptySpace(),
-        NumberCircle('0'),
-        EmptySpace(),
-        ButtonRectangle('='),
-      ],
-    );
-  }
-}
-
-
-class NumberCircle extends StatelessWidget {
-  
-  final String number;
-  
-  NumberCircle(this.number);
-  
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              border: Border.all(width: 2),
-              shape: BoxShape.circle,
-              color: Colors.blueGrey[300],
-            ),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(number),
-              ))
-           );
-    
-  }
-}
-
-class ButtonRectangle extends StatelessWidget {
-  
-  final String symbol;
-  
-  ButtonRectangle(this.symbol);
-  
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-          child: Container(
-            width: 100,
-            height: 40,
-            decoration: BoxDecoration(
-              border: Border.all(width: 2),
-              shape: BoxShape.rectangle,
-              color: Colors.blueGrey[400],
-            ),
-            child: Align(
-              alignment: Alignment.center,
-              child: Text(symbol),
-              ))
-           );
-    
-  }
-}
-
-class Screen extends StatelessWidget {
-  
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Container(
-            width: 300,
-            height: 100,
-            decoration: BoxDecoration(
-              border: Border.all(width: 2),
-              shape: BoxShape.rectangle,
-              color: Colors.blueGrey,
-            ),
-            child: Align(
-              alignment: FractionalOffset(0.1, 0.5),
-              child: Text('2+2'),
-              )),
-        EmptySpace(),
-      ],
-    );
-    
-  }
-}
-
-class EmptySpace extends StatelessWidget {
-  
-  
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-          child: Container(
-            width: 100,
-            height: 100,
-            ),
-           );
-    
   }
 }
