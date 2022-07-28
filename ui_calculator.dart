@@ -8,55 +8,63 @@ class CalculatorApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           brightness: Brightness.light,
-          //primaryColor: Colors.lightGreen[600],
-          //accentColor: Colors.grey[100],
-          // fontFamily: 'Georgia',
-
           textTheme: TextTheme(
-            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
             headline6: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
-            bodyText2: TextStyle(fontSize: 24.0, fontFamily: 'Hind'),
+            bodyText2: TextStyle(fontSize: 28.0, fontFamily: 'Hind'),
           )),
       
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blueGrey[800],
+          backgroundColor: Colors.cyan[800],
           title: Center(
             child: Text('Calculator'),
           ),
+          leading: 
+            Icon(
+              Icons.more_horiz
+            ),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               width: 100,
               height: 20,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  width: 300,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    border: Border.all(width: 2),
-                    shape: BoxShape.rectangle,
-                    color: Colors.blueGrey,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 20,
+                    height: 80,
                   ),
-                  child: Align(
-                    alignment: FractionalOffset(0.1, 0.5),
-                    child: Text('2+2'),
+                  Container(
+                    width: 250,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      shape: BoxShape.rectangle,
+                      color: Colors.blueGrey[600],
+                    ),
+                    child: Align(
+                      alignment: FractionalOffset(0.1, 0.5),
+                      child: Text(
+                        '2+2',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
                   ),
-                ),
-                Container(
-                  width: 100,
-                  height: 100,
-                ),
-              ],
+                  Container(
+                    width: 100,
+                    height: 80,
+                  ),
+                ],
+              ),
             ),
             Flexible(
-              child: GridView.count(
+              child: GridView.count( //scrolling is possible
                 primary: false,
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 10,
@@ -69,7 +77,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -82,7 +90,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -95,7 +103,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -104,11 +112,11 @@ class CalculatorApp extends StatelessWidget {
                   ),
                   Container(
                     width: 100,
-                    height: 40,
+                    height: 100,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.rectangle,
-                      color: Colors.blueGrey[400],
+                      color: Colors.blueGrey[300],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -121,7 +129,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -134,7 +142,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -147,7 +155,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -156,11 +164,11 @@ class CalculatorApp extends StatelessWidget {
                   ),
                   Container(
                     width: 100,
-                    height: 40,
+                    height: 100,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.rectangle,
-                      color: Colors.blueGrey[400],
+                      color: Colors.blueGrey[300],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -173,7 +181,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -186,7 +194,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -199,7 +207,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -220,7 +228,7 @@ class CalculatorApp extends StatelessWidget {
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.circle,
-                      color: Colors.blueGrey[300],
+                      color: Colors.blueGrey[200],
                     ),
                     child: Align(
                       alignment: Alignment.center,
@@ -233,11 +241,11 @@ class CalculatorApp extends StatelessWidget {
                   ),
                   Container(
                     width: 100,
-                    height: 40,
+                    height: 100,
                     decoration: BoxDecoration(
                       border: Border.all(width: 2),
                       shape: BoxShape.rectangle,
-                      color: Colors.blueGrey[400],
+                      color: Colors.blueGrey[300],
                     ),
                     child: Align(
                       alignment: Alignment.center,
